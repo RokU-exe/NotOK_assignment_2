@@ -64,14 +64,35 @@
 }
 
 /* Style the search box inside the navigation bar */
-.topnav input[type=search] {
-    float: center;
-    padding: 12px;
-    border: none;
-    font-size: 20px;
-    background-color:#F5F5F5;
+.search-click {
+    border: 1px solid #ccc;
+    outline: none;
+    background-size: 22px;
+    background-position: 13px;
     width: 1000px;
-    height: 30px;
+    height: 50px;
+    transition: all 0.5s;
+}
+.topnav :placeholder-shown{
+    padding-left: 12px;
+}
+.search-click:focus {
+    width: 1000px;
+}
+.search-click {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+}
+.search-click input {
+    background: transparent;
+    border: 1px solid #ccc;
+    outline: none;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 0%;
+    padding: 10px;
 }
 
 /* Style buttons */
@@ -219,7 +240,7 @@ ul{
 
 
 /* ---------- Responsive footer section ---------- */
-@media(max-width: 1023px){
+@media(max-width: 767px){
     .footer-col{
         width: 50%;
         margin-bottom: 30px;
