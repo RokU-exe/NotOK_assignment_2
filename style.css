@@ -42,16 +42,28 @@
 }
 .logo{
     background-color: white;
-    width: 150px;
+    width: 90%;
 }
 /* Add a black background color to the top navigation bar */
 .topnav {
     overflow:hidden;
     background-color: #F5F5F5;
     padding: 10px;
-  }
+    display: flex;
+    align-items: center;
+}
+.topnav img{
+    width: 40px;
+}
+.topnav button{
+    border: none;
+}
+.cart img{
+    width: 30%;
+    padding:20px;
+}
 
-  /* Style the search box inside the navigation bar */
+/* Style the search box inside the navigation bar */
 .topnav input[type=search] {
     float: center;
     padding: 12px;
@@ -59,26 +71,10 @@
     font-size: 20px;
     background-color:#F5F5F5;
     width: 1000px;
-    height: 50px;
-    resize: none;
-    outline: none;
+    height: 30px;
 }
 
-.sub-btn {
-    background: transparent;
-    border: none;
-    outline: none;
-    margin-left: -55px;   
-    margin-top: 0px;
-  }
-
-.sub-btn img {
-   height: 50px;
-   width: 50px;
-   object-fit: cover;
-}
-
-  /* Style buttons */
+/* Style buttons */
 .btn {
     width: 45px;
     height: 45px;
@@ -103,7 +99,7 @@
     flex-direction: row;
     justify-content: center;
 }
-/* ------ Design the event box model ----- */
+/* ---------- Design the event box model ---------- */
 .event{
     margin: 20px 0;
     background-color: #FB67A7;
@@ -114,6 +110,7 @@
     justify-content: center;
 }
 .types{
+
     margin: 0px 10px 10px 10px;
     padding: 0px 20px;
     display: flex;
@@ -121,8 +118,11 @@
     background-color: white;
     border-radius: 30px;
     align-items: center;
+    font-size: 1.5vw;
 }
-
+.types img{
+    height: 50px;
+}
 hr{
     width: 50%;
     margin: 0 25% 0 25%;
@@ -139,4 +139,103 @@ hr{
     position: absolute;
     width: 24%;
     padding-left: 60%;
+}
+
+/* ---------- Design the footer of the website ---------- */
+.containers{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+#flags{
+    width: 5%;
+}
+
+.footer-container{
+	max-width: 1170px;
+	margin:auto;
+}
+.footer-row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+    padding: 70px;
+    background-color: #F5F5F5;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: black;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: black;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: black;
+	text-decoration: none;
+	font-weight: 300;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: black;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+}
+
+
+/* ---------- RESPONSIVE LAZADA WEBSITE DESIGN ---------- */
+
+
+
+/* ---------- Responsive footer section ---------- */
+@media(max-width: 1023px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+}
+}
+@media(max-width: 767px){
+    .footer-col{
+        width: 100%;
+}
+    .types img{
+        height: 20px;
+}
+.voucher-500{
+    display: none;
+}
+.logo{
+    display: none;
+}
 }
