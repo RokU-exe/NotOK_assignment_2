@@ -12,10 +12,28 @@ app.use(express.urlencoded({ extended: true }));
 const Product = require('./model/Product');
 
 //render home page
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     Product.find()
     .then((products) => {
         res.render('home', {products: products});
+    })
+    .catch((error) => console.log(error.message));
+});
+
+//render login page
+app.get('/login', (req, res) => {
+    Product.find()
+    .then((products) => {
+        res.render('login', {products: products});
+    })
+    .catch((error) => console.log(error.message));
+});
+
+//render product page
+app.get('/product', (req, res) => {
+    Product.find()
+    .then((products) => {
+        res.render('product', {products: products});
     })
     .catch((error) => console.log(error.message));
 });
