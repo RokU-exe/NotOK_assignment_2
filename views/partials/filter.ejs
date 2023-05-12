@@ -1,0 +1,32 @@
+<!--=============== Filter starts ===============-->
+<div class="customer-filter">
+    <div class="filter" id="vendor-filter">
+        <h5>Vendors</h5>
+        <input type="checkbox" id="all" name="all" value="all" onclick="checkAll(this)">
+        <label for="all"> All Vendors</label><br>
+        <input type="checkbox" class="check-option" id="uniqlo" name="uniqlo" value="Uniqlo" onclick="filterSelection()">
+        <label for="uniqlo"> Uniqlo</label><br>
+        <input type="checkbox"class="check-option"  id="gearVN" name="gearVN" value="GearVN" onclick="filterSelection()">
+        <label for="gearVN"> GearVN </label><br>
+        <input type="checkbox" class="check-option" id="dyson" name="dyson" value="Dyson" onclick="filterSelection()">
+        <label for="dyson"> Dyson </label><br>
+    </div>
+
+    <div class="filter" id="price-filter">
+        <h5>Price Range</h5>
+        <div class="d-flex align-items-center justify-content-between price-input">
+            <div class="field d-flex">
+                <input type="number" id="input-min" placeholder="Min">
+            </div>
+            <div class="separator d-flex">-</div>
+            <div class="field d-flex">
+                <input type="number" id="input-max" placeholder="Max">
+            </div>
+            <div class="btn btn-danger filter-btn d-flex" onclick="priceFilter()">
+                <i class="fa-solid fa-play"></i>
+            </div>       
+        </div>
+    </div>
+
+</div>
+<!--=============== Filter ends ===============-->
