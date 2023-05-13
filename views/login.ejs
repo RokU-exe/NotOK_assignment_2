@@ -1,23 +1,25 @@
 <%- include('partials/head') %>
+<%- include('partials/nav') %>
 <main>
     <div class="login-container">
         <div>
             <h1>Login</h1>
         </div>
-            <form name="login" onsubmit="return validateForm() ;" method="post">
+            <form name="login" onsubmit="return validateForm();" method="post">
                 <div class="user-pass">
                     <ul>
-                        <li>Username: <input class="username" type="text" name="username"></li>
+                        <li>Username <input class="username" type="text" name="username"></li>
                 
-                        <li>Password: <input class="password" type="password" name="password"></li>
+                        <li>Password <input class="password" type="password" name="password"></li>
                     </ul>
                 </div>
                 <div>
                     <label for=""><input type="checkbox">Remember Me <a href="#">Forget Password?</a></label>
                 </div>
                 <br>
-                <input type="button" class="submit" value="Log In" name="submit" onclick="validate()">
-                <p>Don't have an account <a href="/registerform">Register</a></p>
+                <input type="button" class="submit" value="Login" name="submit" onclick="validate()">
+                <br><br>
+                <p>New account? <a href="/register">Register</a></p>
                 </form></div>
 </main>
 

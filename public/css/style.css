@@ -1,4 +1,4 @@
-/* Buttons */
+/* ---------- Design the button page ---------- */
 .btn-danger{
     --bs-btn-bg: #ed6600;
     --bs-btn-border-color: #ed6600;
@@ -63,45 +63,17 @@
 }
 
 
-
-@media(max-width: 768px){
-    .price-input{
-        display: block!important;
-    }
-    .price-input .separator{
-        display: none!important;
-    }
-    .price-input .filter-btn{
-        margin: 10px 0;
-        justify-content: center;
-    }
-    .card-title{
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .customer-filter{
-        display: block;
-        position:absolute;
-    }
-}
-
-
-
-
-/*Code bừa mục 2*/
+/* ---------- Design the login page ---------- */
 .user-pass ul li {
 	list-style-type: none;
 	padding-bottom: 5%;
 }
 
 .user-pass ul li input {
-	background-color: #333;
-	border: none;
-	border-radius: 2px;
+	background-color: white;
+	border: solid 1px black;
+	border-radius: 5px;
 	text-align: left;
-	color: white;
 }
 
 h1{
@@ -110,18 +82,15 @@ h1{
 }
 
 .login-container {
+    margin: 30px auto;
+    padding: 5px;
     font-family: sans-serif;
-	padding: 5px;
     border: 2px solid #F07334;
-    width: 24%;
+    width: 30%;
     text-align: center;
-    margin: auto;
     border-radius: 12px;
     background-color: white;
     padding-bottom: 10px;
-    -webkit-box-shadow: 3px 0px 10px 0px black;
-    -moz-box-shadow: 3px 0px 10px 0px black;
-    box-shadow: 3px 0px 10px 0px black;
 
 }
 
@@ -144,11 +113,50 @@ h1{
 width: 50%
 }
 
-
-
-
-
-
+/* ---------- Design the register page ---------- */
+#register-form {
+    margin: 30px auto;
+    padding: 12px;
+    width: 70%;
+    border: 2px solid #F07334;
+    border-radius: 25px;
+}
+#register-form .input[type=text], input[type=password] {
+	width: 97%;
+	padding: 10px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #F5F5F5;
+}
+#register-form .hr {
+	border: 1px solid #e6e6e6;
+}
+#register-form .registerbutton{
+	background-color: #F07334;
+	color: white;
+	padding: 15px 20px;
+	margin: 10px 0px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+#register-form h1 {
+    text-align: center;
+}
+#register-form h4 {
+    text-align: center;
+}
+#register-form label {
+    padding-bottom: 1px;
+}
+#register-form input {
+    width: 100%;
+}
+#register-form input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* hide arrows from input number in form */
+    margin: 0;
+}
 /*Code bừa*/
 *{
     text-decoration: none;
@@ -377,6 +385,29 @@ ul{
 
 /* ---------- RESPONSIVE LAZADA WEBSITE DESIGN ---------- */
 
+/* ---------- Responsive buttons ---------- */
+@media(max-width: 768px){
+    .price-input{
+        display: block!important;
+    }
+    .price-input .separator{
+        display: none!important;
+    }
+    .price-input .filter-btn{
+        margin: 10px 0;
+        justify-content: center;
+    }
+    .card-title{
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .customer-filter{
+        display: block;
+        position:absolute;
+    }
+}
 
 
 /* ---------- Responsive footer section ---------- */

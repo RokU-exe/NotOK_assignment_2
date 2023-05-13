@@ -29,6 +29,15 @@ app.get('/login', (req, res) => {
     .catch((error) => console.log(error.message));
 });
 
+//render register page
+app.get('/register', (req, res) => {
+    Product.find()
+    .then((products) => {
+        res.render('register', {products: products});
+    })
+    .catch((error) => console.log(error.message));
+});
+
 //render customer home page and get all products
 app.get('/customer-home', (req, res) => {
     Product.find()
