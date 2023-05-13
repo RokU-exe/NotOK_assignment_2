@@ -413,18 +413,21 @@ ul{
 /* ---------- Responsive footer section ---------- */
 @media(max-width: 767px){
     .home-footer-col{
-        width: 50%;
-        margin-bottom: 30px;
-}
-}
-@media(max-width: 767px){
-    .home-footer-col{
         width: 100%;
-}
+    }
+    .home-footer-col ul li a{
+        font-size: 70%;
+    } 
+    .home-footer-col h4{
+        font-size: 70%;
+    }     
     .types img{
-        height: 20px;
-}
-.logo{
-    display: none;
-}
+        height: 20px; 
+    }
+    .home-footer-col .social-links img{
+        width: 70%;
+    }
+    .logo{
+        display: none;
+    }
 }
