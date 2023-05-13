@@ -90,7 +90,59 @@
 
 
 
+/*Code bừa mục 2*/
+.user-pass ul li {
+	list-style-type: none;
+	padding-bottom: 5%;
+}
 
+.user-pass ul li input {
+	background-color: #333;
+	border: none;
+	border-radius: 2px;
+	text-align: left;
+	color: white;
+}
+
+h1{
+	font-family: sans-serif;
+	color: #F07334;
+}
+
+.login-container {
+    font-family: sans-serif;
+	padding: 5px;
+    border: 2px solid #F07334;
+    width: 24%;
+    text-align: center;
+    margin: auto;
+    border-radius: 12px;
+    background-color: white;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 3px 0px 10px 0px black;
+    -moz-box-shadow: 3px 0px 10px 0px black;
+    box-shadow: 3px 0px 10px 0px black;
+
+}
+
+.submit {
+	background-color: transparent;
+	color: black;
+	border: 1px solid black;
+	border-radius: 12px;
+	width: 50%;
+	font-family: "Aria";
+	font-size: 18px;
+	text-align: center;;
+}
+
+.submit:hover {
+	background-color: #F07334;
+}
+
+.password, .username {
+width: 50%
+}
 
 
 
