@@ -15,18 +15,18 @@
 
     <div class="form">
       <h1>ADD NEW PRODUCT</h1>
-      <form>
+      <form action="/product" method="post">
           <label for="firstName">Product's name:</label><br>
-        <input type="text" id="firstName" name="firstName"><br><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
           <label for="password">Price:</label><br>
-        <input type="number" min="0"><br><br>
+        <input type="number" min="0" required><br><br>
         <label for="image">Product's image</label><br>
-        <input type="file" id="productimage" name="productimage"><br><br>
+        <input type="file" id="productimage" name="productimage" required><br><br>
           <label for="freeform">Description:</label>
         <br>
         <textarea id="freeform" name="freeform" rows="4" cols="50">
         </textarea><br><br>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Create">
           <input type="reset" value="Reset">
       </form>
     </div>

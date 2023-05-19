@@ -26,8 +26,18 @@
               <th></th>
              
            </tr>
+
+           <% products.forEach(function(product) { %>
+            <tr>
+              <td></td> 
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= product.description %></td>
+              <td><a href="/product/<%= product.id %>/update">Click here</a> <a href="/product/<%= product.id %>/delete">Click here</a> </td>
+            </tr>
+          <% }); %>
      
-           <tr>
+           <!-- <tr>
               <td><img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" /></td>
               <td>Jane Doe</td>
               <td>jane.doe@foo.com</td>
@@ -57,7 +67,7 @@
               <td>john.smith@foo.com</td>
               <td>Aut voluptatum accusantium, eveniet, sapiente quaerat adipisci consequatur maxime temporibus quas, dolorem impedit.</td>
               <td><button class="delete">Delete</button><button class="edit">Edit</button></td>
-           </tr>
+           </tr> -->
         </table>
      </div>
 </body>
