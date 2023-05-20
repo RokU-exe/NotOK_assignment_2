@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View my product</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+   <nav class="breadcrumbs">
+      <a href="../vendor.html" class="breadcrumbs__item">Home</a>
+      <a href="#checkout" class="breadcrumbs__item is-active">View My Product</a> 
+    </nav>
+    
+
+    <div class="table-users">
+        <div class="header">Product</div>
+        
+        <table cellspacing="0">
+           <tr>
+              <th>Picture</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th width="230">Description</th>
+              <th></th>
+             
+           </tr>
+
+           <% products.forEach(function(product) { %>
+            <tr>
+              <td></td> 
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= product.description %></td>
+              <td><a href="/product/<%= product.id %>/update">Click here</a> <a href="/product/<%= product.id %>/delete">Click here</a> </td>
+            </tr>
+          <% }); %>
+     
+           <!-- <tr>
+              <td><img src="https://i.picsum.photos/id/1005/100/100.jpg" alt="" /></td>
+              <td>Jane Doe</td>
+              <td>jane.doe@foo.com</td>
+              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </td>
+              <td><button class="delete">Delete</button><button class="edit">Edit</button></td>
+           </tr>
+     
+           <tr>
+              <td><img src="https://i.picsum.photos/id/1027/100/100.jpg" alt="" /></td>
+              <td>John Doe</td>
+              <td>john.doe@foo.com</td>
+              <td>Blanditiis, aliquid numquam iure voluptatibus ut maiores explicabo ducimus neque, nesciunt rerum perferendis, inventore.</td>
+              <td><button class="delete">Delete</button><button class="edit">Edit</button></td>
+           </tr>
+     
+           <tr>
+              <td><img src="https://i.picsum.photos/id/64/100/100.jpg" alt="" /></td>
+              <td>Jane Smith</td>
+              <td>jane.smith@foo.com</td>
+              <td> Culpa praesentium unde pariatur fugit eos recusandae voluptas.</td>
+              <td><button class="delete">Delete</button><button class="edit">Edit</button></td>
+           </tr>
+           
+           <tr>
+              <td><img src="https://i.picsum.photos/id/1025/100/100.jpg" alt="" /></td>
+              <td>John Smith</td>
+              <td>john.smith@foo.com</td>
+              <td>Aut voluptatum accusantium, eveniet, sapiente quaerat adipisci consequatur maxime temporibus quas, dolorem impedit.</td>
+              <td><button class="delete">Delete</button><button class="edit">Edit</button></td>
+           </tr> -->
+        </table>
+     </div>
+</body>
+</html>

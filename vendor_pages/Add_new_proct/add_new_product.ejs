@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new product</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <nav class="breadcrumbs">
+    <a href="../vendor.html" class="breadcrumbs__item">Home</a>
+    <a href="#checkout" class="breadcrumbs__item is-active">Add New Prodct</a> 
+  </nav>
+
+    <div class="form">
+      <h1>ADD NEW PRODUCT</h1>
+      <form action="/product" method="post">
+          <label for="firstName">Product's name:</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+          <label for="password">Price:</label><br>
+        <input type="number" min="0" required><br><br>
+        <label for="image">Product's image</label><br>
+        <input type="file" id="productimage" name="productimage" required><br><br>
+          <label for="freeform">Description:</label>
+        <br>
+        <textarea id="freeform" name="freeform" rows="4" cols="50">
+        </textarea><br><br>
+          <input type="submit" value="Create">
+          <input type="reset" value="Reset">
+      </form>
+    </div>
+</body>
