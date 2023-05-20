@@ -1,3 +1,14 @@
+// RMIT University Vietnam
+// Course: COSC2430 Web Programming
+// Semester: 2023A
+// Assessment: Assignment 2
+// Author: NotOk Group
+// - Tran Nguyen Ngoc Han (s3963227)
+// - Truong Loc Thien (s3924695)
+// - Le Xuan Loc (s3955317)
+// - Do Xuan Gia Bao (s3932184)
+// Acknowledgement: 
+// - https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
 function checkAll(checkBox){
     var checkBoxes = document.querySelectorAll('input.check-option');
     for(let i = 0; i < checkBoxes.length; i++){
@@ -35,7 +46,7 @@ function priceFilter(){
     console.log(maxInput)
 }
 
-
+//Create customer account
 var count = 2;
 
 function validate ()
@@ -57,7 +68,66 @@ if (password == passwordArray [i])
 if(valid)
 {
    alert("Login was successful");
-   window.location = "/"
+   window.location = "customer-home"
+   return false ;
+}
+}
+
+//Create vendor account
+function validate ()
+{
+   var user = document.login.username.value;
+   var password = document.login.password.value;
+   var valid = false;
+   var usernameArray = ["vendor1"]
+   var passwordArray = ["123"]
+   for (var i = 0; i < usernameArray.length; i++)
+
+if (user == usernameArray[i])
+if (password == passwordArray [i])
+{
+   valid = true;
+   break;
+}
+
+if(valid)
+{
+   alert("Login was successful");
+   window.location = "add_new_product"
+   return false ;
+}
+var again = "tries";
+if (count ==1)
+{
+   again = "try"
+}
+if(count >= 1)
+{
+   alert("Wrong password or username")
+   count--;
+}
+// Create shipper account
+}
+function validate ()
+{
+   var user = document.login.username.value;
+   var password = document.login.password.value;
+   var valid = false;
+   var usernameArray = ["shipper1"]
+   var passwordArray = ["123"]
+   for (var i = 0; i < usernameArray.length; i++)
+
+if (user == usernameArray[i])
+if (password == passwordArray [i])
+{
+   valid = true;
+   break;
+}
+
+if(valid)
+{
+   alert("Login was successful");
+   window.location = "shipper"
    return false ;
 }
 var again = "tries";

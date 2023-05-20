@@ -1,3 +1,17 @@
+/* RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: NotOk Group
+- Tran Nguyen Ngoc Han (s3963227)
+- Truong Loc Thien (s3924695)
+- Le Xuan Loc (s3955317)
+- Do Xuan Gia Bao (s3932184)
+Acknowledgement: 
+- https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
+*/
+
+
 /* ---------- Design the button page ---------- */
 .btn-danger{
     --bs-btn-bg: #ed6600;
@@ -78,22 +92,26 @@
 
 h1{
 	font-family: sans-serif;
-	color: #F07334;
+	color: #ed6600;
 }
 
 .login-container {
     margin: 30px auto;
     padding: 5px;
     font-family: sans-serif;
-    border: 2px solid #F07334;
+    border: 2px solid #ed6600;
     width: 30%;
     text-align: center;
     border-radius: 12px;
     background-color: white;
     padding-bottom: 10px;
-
 }
 
+.login-container .user-pass ul li{
+    text-align: left;
+    font-weight: bold;
+    margin-left: 10px;
+}
 .submit {
 	background-color: transparent;
 	color: black;
@@ -106,11 +124,11 @@ h1{
 }
 
 .submit:hover {
-	background-color: #F07334;
+	background-color: #ed6600;
 }
 
 .password, .username {
-width: 50%
+    width: 97%;
 }
 
 /* ---------- Design the register page ---------- */
@@ -118,7 +136,7 @@ width: 50%
     margin: 30px auto;
     padding: 12px;
     width: 70%;
-    border: 2px solid #F07334;
+    border: 2px solid #ed6600;
     border-radius: 25px;
 }
 #register-form .input[type=text], input[type=password] {
@@ -133,7 +151,7 @@ width: 50%
 	border: 1px solid #e6e6e6;
 }
 #register-form .registerbutton{
-	background-color: #F07334;
+	background-color: #ed6600;
 	color: white;
 	padding: 15px 20px;
 	margin: 10px 0px;
@@ -380,6 +398,21 @@ ul{
 	margin:0 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
+}
+
+#vendors {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #vendors td, #vendors th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+col{
+    background-color: #fca800;
 }
 
 

@@ -1,3 +1,15 @@
+/* RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: NotOk Group
+- Tran Nguyen Ngoc Han (s3963227)
+- Truong Loc Thien (s3924695)
+- Le Xuan Loc (s3955317)
+- Do Xuan Gia Bao (s3932184)
+Acknowledgement: 
+- https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
+*/
 * {
   box-sizing: border-box;
 }
@@ -7,13 +19,7 @@ html.open, body.open {
   overflow: hidden;
 }
 
-html {
-  padding: 40px;
-  font-size: 62.5%;
-}
-
 body {
-  padding: 20px;
   background-color: #fff;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -178,7 +184,7 @@ dd {
   border: 1px solid #a82545;
 }
 
-@media (min-width: 460px) {
+@media (min-width: 1023px) {
   td {
     text-align: left;
   }
@@ -192,7 +198,7 @@ dd {
     padding-left: 160px;
   }
 }
-@media (min-width: 720px) {
+@media (min-width: 767px) {
   table {
     display: table;
   }
