@@ -1,0 +1,36 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: NotOk Group
+- Tran Nguyen Ngoc Han (s3963227)
+- Truong Loc Thien (s3924695)
+- Le Xuan Loc (s3955317)
+- Do Xuan Gia Bao (s3932184)
+Acknowledgement: 
+- https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
+-->
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+<main>
+    <div class="login-container">
+        <div>
+            <h1>Login</h1>
+        </div>
+            <form name="login" onsubmit="return validateForm();" method="post">
+                <div class="user-pass">
+                    <ul>
+                        <li>Username <input class="username" type="text" name="username"></li>
+                
+                        <li>Password <input class="password" type="password" name="password"></li>
+                    </ul>
+                </div>
+                <input type="button" class="submit" value="Login" name="submit" onclick="validate()">
+                <br><br>
+                <p>New account? <a href="/register">Register</a></p>
+                </form></div>
+</main>
+
+<script src="/login"></script>
+
+<%- include('partials/footer'); %>

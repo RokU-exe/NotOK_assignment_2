@@ -1,0 +1,61 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: NotOk Group
+- Tran Nguyen Ngoc Han (s3963227)
+- Truong Loc Thien (s3924695)
+- Le Xuan Loc (s3955317)
+- Do Xuan Gia Bao (s3932184)
+Acknowledgement: 
+- https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
+-->
+
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+
+<!--=================== Main Section starts ===================-->
+<main>
+    <div class="py-5 bg-body-tertiary" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 min-vh-50">
+                  <!-- Display filter -->
+                  <%- include('partials/filter') %>
+                </div>
+                
+                <div class="col-sm-9">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-md- g-3">
+                      <!-- Displat products -->
+                        <% products.forEach(function(product){ %>
+                          <div class="col">
+                            <div class="card shadow-sm card-height">
+                              <img src="/images/PRODUCT/<%= product.image %>" alt="<%= product.image %>">
+                              <div class="card-body text-center justify-content-center">
+                                <h4 class="card-title">
+                                  <%= product.name %>
+                                </h4>
+                                <h5 class="card-text text-danger">
+                                  <%= product.price %> AUD
+                                </h5>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="d-grid gap-2 d-md-block">
+                                        <a href="product/<%= product.id %>" type="button" class="btn btn-primary btn-sm">View</a>
+                                        <a href="/order" type="button" class="btn btn-danger btn-sm">
+                                          <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                                          To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,238 @@
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/shipper.css">
+    <script>$(".button, .close").on("click", function (e) {
+        e.preventDefault();
+        $(".detail, html, body").toggleClass("open");
+      });
+    </script>
+</head>
+<h1>
+    Order' Status
+  </h1>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Provider Name
+          </th>
+          <th>
+            Customer name
+          </th>
+          <th>
+            Customer's addrees
+          </th>
+          <th>
+            Customer's phone
+          </th>
+          <th>
+            Status
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr>
+          <td data-title='Provider Name'>
+            Iacob Geaorgescu
+          </td>
+          <td data-title="Customer name">
+            Ian Ciuc
+          </td>
+          <td data-title="Customer's addrees">
+            Dubai
+          </td>
+          <td data-title="Customer's Phone">
+            0123456789
+          </td>
+          <td data-title="Status">
+            Delivering
+          </td>
+          <td class='select'>
+            <a class='button' href='#'>
+              Select
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td data-title='Provider Name'>
+            Iacob Geaorgescu
+          </td>
+          <td data-title="Customer name">
+            Loc
+          </td>
+          <td data-title="Customer's addrees">
+            Ha Noi
+          </td>
+          <td data-title="Customer's Phone">
+            0123445661
+          </td>
+          <td data-title="Status">
+            Delivering
+          </td>
+          <td class='select'>
+            <a class='button' href='#'>
+              Select
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td data-title='Provider Name'>
+            Iacob Geaorgescu
+          </td>
+          <td data-title="Customer name">
+            Bao
+          </td>
+          <td data-title="Customer's addrees">
+            Ho Chi Minh
+          </td>
+          <td data-title="Customer's Phone">
+            0345678983
+          </td>
+          <td data-title="Status">
+            Canceled
+          </td>
+          <td class='select'>
+            <a class='button' href='#'>
+              Select
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td data-title='Provider Name'>
+            Iacob Geaorgescu
+          </td>
+          <td data-title="Customer name">
+            Han
+          </td>
+          <td data-title="Customer's addrees">
+            Ho Chi Minh
+          </td>
+          <td data-title="Customer's Phone">
+            8732123456
+          </td>
+          <td data-title="Status">
+            Pending
+          </td>
+          <td class='select'>
+            <a class='button' href='#'>
+              Select
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td data-title='Provider Name'>
+            Iacob Geaorgescu
+          </td>
+          <td data-title="Customer name">
+            Thien
+          </td>
+          <td data-title="Customer's addrees">
+            Ha Noi
+          </td>
+          <td data-title="Customer's Phone">
+            0346543676
+          </td>
+          <td data-title="Status">
+            Delivered
+          </td>
+          <td class='select'>
+            <a class='button' href='#'>
+              Select
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td data-title='Provider Name'>
+            Iacob Geaorgescu
+          </td>
+          <td data-title="Customer name">
+            Thach
+          </td>
+          <td data-title="Customer's addrees">
+            Ho Chi Minh
+          </td>
+          <td data-title="Customer's Phone">
+            0348325934
+          </td>
+          <td data-title="Status">
+            Pending
+          </td>
+          <td class='select'>
+            <a class='button' href='#'>
+              Select
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class='detail'>
+      <div class='detail-container'>
+        <dl>
+          <dt>
+            Provider Name
+          </dt>
+          <dd>
+            John Doe
+          </dd>
+          <dt>
+            E-mail
+          </dt>
+          <dd>
+            email@example.com
+          </dd>
+          <dt>
+            City
+          </dt>
+          <dd>
+            Detroit
+          </dd>
+          <dt>
+            Phone-Number
+          </dt>
+          <dd>
+            555-555-5555
+          </dd>
+          <dt>
+            Last Update
+          </dt>
+          <dd>
+            Jun 20 2014
+          </dd>
+          <dt>
+            Notes
+          </dt>
+          <dd>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+          </dd>
+        </dl>
+      </div>
+      <div class='detail-nav'>
+        <button class='close'>
+          Close
+        </button>
+      </div>
+    </div>
+  </main>
+  
+</body>
+
+<%- include('partials/footer') %>
