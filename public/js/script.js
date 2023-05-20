@@ -57,7 +57,7 @@ if (password == passwordArray [i])
 if(valid)
 {
    alert("Login was successful");
-   window.location = "home"
+   window.location = "/"
    return false ;
 }
 var again = "tries";
