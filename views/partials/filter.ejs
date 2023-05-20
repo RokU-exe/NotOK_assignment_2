@@ -1,31 +1,53 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: NotOk Group
+- Tran Nguyen Ngoc Han (s3963227)
+- Truong Loc Thien (s3924695)
+- Le Xuan Loc (s3955317)
+- Do Xuan Gia Bao (s3932184)
+Acknowledgement: 
+- https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
+-->
 <!--=============== Filter starts ===============-->
 <div class="customer-filter">
     <div class="filter" id="vendor-filter">
         <h5>Vendors</h5>
-        <input type="checkbox" id="all" name="all" value="all" onclick="checkAll(this)">
-        <label for="all"> All Vendors</label><br>
-        <input type="checkbox" class="check-option" id="uniqlo" name="uniqlo" value="Uniqlo" onclick="filterSelection()">
-        <label for="uniqlo"> Uniqlo</label><br>
-        <input type="checkbox"class="check-option"  id="gearVN" name="gearVN" value="GearVN" onclick="filterSelection()">
-        <label for="gearVN"> GearVN </label><br>
-        <input type="checkbox" class="check-option" id="dyson" name="dyson" value="Dyson" onclick="filterSelection()">
-        <label for="dyson"> Dyson </label><br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="all" value="vendors[]" id="all>" checked onclick="checkAll()">
+            <label class="form-check-label">All</label>
+        </div>
+
+        <!-- Display vendors as checkbox for filtering - future development -->
+        <% vendors.forEach(function(vendor){ %>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="vendors[]" value="<%= vendor.id %>" id="vendor<%= vendor.id %>">
+                <label class="form-check-label" for="vendor<%= vendor.id %>"><%= vendor.name %></label>
+            </div>
+        <% }); %>
     </div>
 
+    <!-- Price filtering -->
     <div class="filter" id="price-filter">
         <h5>Price Range</h5>
-        <div class="d-flex align-items-center justify-content-between price-input">
-            <div class="field d-flex">
-                <input type="number" id="input-min" placeholder="Min">
+
+        <form method="GET" action="/price-filter">
+            <div class="d-flex align-items-center justify-content-between price-input">
+                <div class="field d-flex">
+                    <input type="number" id="input-min" name="min" placeholder="Min">
+                </div>
+                <div class="separator d-flex">-</div>
+                <div class="field d-flex">
+                    <input type="number" id="input-max" name="max" placeholder="Max">
+                </div>
+
+                <button class="btn btn-danger filter-btn d-flex" type="submit">
+                    <i class="fa-solid fa-play"></i>
+                </button>
             </div>
-            <div class="separator d-flex">-</div>
-            <div class="field d-flex">
-                <input type="number" id="input-max" placeholder="Max">
-            </div>
-            <div class="btn btn-danger filter-btn d-flex" onclick="priceFilter()">
-                <i class="fa-solid fa-play"></i>
-            </div>       
-        </div>
+        </form>
+        
     </div>
 
 </div>

@@ -12,6 +12,7 @@ Acknowledgement:
 -->
 <%- include ('partials/head') %>
 <%- include ('partials/nav') %>
+
 <!--==========Product Section==========-->
 <main >
   <div class="py-5 bg-body-tertiary" id="products-detail">
@@ -32,9 +33,9 @@ Acknowledgement:
           <h3 class="text-danger"><%= product.price %> AUD</h3>
           <p><%= product.description %></p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a href="product/<%= product.id %>/to-cart" type="button" class="btn btn-danger">
+            <a href="/order" type="button" class="btn btn-danger">
               <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-              To Cart
+               Add To Cart
             </a>
           </div>
         </div>

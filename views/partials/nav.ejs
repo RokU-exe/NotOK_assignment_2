@@ -12,10 +12,10 @@ Acknowledgement:
 -->
 <!--=============== Navigation starts ===============-->
 <div class="small-cover">
-    <a href="/customer-home"><img src="/images/home/Small_cover.png" alt="smallCover"></a>
+    <a href="/all"><img src="/images/home/Small_cover.png" alt="smallCover"></a>
 </div>
 <div><ul class="navlist">
-    <li class="list_item"><a href="/customer-home">PRODUCT</a></li>
+    <li class="list_item"><a href="/all">PRODUCT</a></li>
     <li class="list_item"><a href="/login">LOGIN</a></li>
 </ul></div>
 
@@ -25,9 +25,11 @@ Acknowledgement:
             <a href="/"><img src="/images/home/lazada.png" alt="Logo" class="logo"></a>       
         </div>
         <div class="topnav">
-            <input type="text" class="search-click" name="search-bar" placeholder="Search here..." />
-            <button type="submit"><img src="/images/home/Magnify.png"></button>
-            <a class="cart" href="#"><img src="/images/home/cart.png" alt="cart"></a>                                       
+            <form method="GET" action="/filter">
+                <input type="text" class="search-click" name="search" placeholder="Search here..." />
+                <button type="submit"><img src="/images/home/Magnify.png"></button>
+            </form>
+            <a class="cart" href="../order"><img src="/images/home/cart.png" alt="cart"></a>                                       
         </div>                        
     </nav>
 </header>

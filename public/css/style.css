@@ -62,6 +62,10 @@ Acknowledgement:
     border-top: 1px solid var(--bs-gray-300);
 }
 
+.min-vh-50{
+    min-height:50vh!important;
+}
+
 #products-detail{
     display: flex;
     justify-content:center;
@@ -75,7 +79,6 @@ Acknowledgement:
 #products-detail .card-body{
     border-bottom: 1px solid var(--bs-gray-300);
 }
-
 
 /* ---------- Design the login page ---------- */
 .user-pass ul li {

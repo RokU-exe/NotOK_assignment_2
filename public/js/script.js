@@ -9,42 +9,7 @@
 // - Do Xuan Gia Bao (s3932184)
 // Acknowledgement: 
 // - https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
-function checkAll(checkBox){
-    var checkBoxes = document.querySelectorAll('input.check-option');
-    for(let i = 0; i < checkBoxes.length; i++){
-        checkBoxes[i].checked =  checkBox.checked;
-    }
 
-    filterSelection();
-}
-
-function filterSelection(){  
-    const vendors = ["uniqlo", "gearVN", "dyson"];
-
-    for(let i = 0; i < vendors.length; i++){
-      var checkBox = document.getElementById(vendors[i]);
-      var product = document.getElementsByClassName(vendors[i]);
-
-      for(let i = 0; i < product.length; i++){
-        if (checkBox.checked == true){
-          product[i].style.display = "flex";
-        } else {
-          product[i].style.display = "none";
-        }
-      }
-    }
-}
-
-
-var rangeInput = document.getElementById("input-min", "input-max");
-
-function priceFilter(){
-    var minInput = rangeInput[0];
-    var maxInput = rangeInput[1];
-
-    console.log(minInput);
-    console.log(maxInput)
-}
 
 //Create customer account
 var count = 2;
@@ -71,8 +36,17 @@ if(valid)
    window.location = "customer-home"
    return false ;
 }
+var again = "tries";
+if (count ==1)
+{
+   again = "try"
 }
-
+if(count >= 1)
+{
+   alert("Wrong password or username")
+   count--;
+}
+}
 //Create vendor account
 var count = 2;
 function validate ()

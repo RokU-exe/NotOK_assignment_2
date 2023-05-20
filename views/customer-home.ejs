@@ -10,49 +10,52 @@ Author: NotOk Group
 Acknowledgement: 
 - https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
 -->
+
 <%- include('partials/head') %>
 <%- include('partials/nav') %>
 
 <!--=================== Main Section starts ===================-->
-<main >
-  <div class="py-5 bg-body-tertiary" id="products">
-    <div class="container">
-      <div class="row row-cols-2 g-3">
-        <!-- Left side bar -->
-        <div class="col-3 min-vh-100">
-          <%- include('partials/filter') %>
-        </div>
-
-        <!-- Right side bar -->
-        <div class="col-9 .col-md-8">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <% products.forEach(function(product){ %>
-            <div class="col">
-              <div class="card shadow-sm <%= product.vendorName %>">
-                <img src="/images/product/<%= product.image %>" alt="<%= product.image %>">
-                <div class="card-body text-center">
-                  <h5 class="card-title">
-                    <%= product.name %>
-                  </h5>
-                  <h6 class="card-text text-danger">
-                    <%= product.price %> AUD
-                  </h6>
-                  <div class="d-grid gap-2 d-md-block">
-                      <a href="product/<%= product.id %>" type="button" class="btn btn-primary btn-sm">View</a>
-                      <a href="product/<%= product.id %>/to-cart" type="button" class="btn btn-danger btn-sm">
-                        <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                        To Cart
-                      </a>
-                  </div>
+<main>
+    <div class="py-5 bg-body-tertiary" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 min-vh-50">
+                  <!-- Display filter -->
+                  <%- include('partials/filter') %>
                 </div>
-              </div>
+                
+                <div class="col-sm-9">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-md- g-3">
+                      <!-- Displat products -->
+                        <% products.forEach(function(product){ %>
+                          <div class="col">
+                            <div class="card shadow-sm card-height">
+                              <img src="/images/PRODUCT/<%= product.image %>" alt="<%= product.image %>">
+                              <div class="card-body text-center justify-content-center">
+                                <h4 class="card-title">
+                                  <%= product.name %>
+                                </h4>
+                                <h5 class="card-text text-danger">
+                                  <%= product.price %> AUD
+                                </h5>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="d-grid gap-2 d-md-block">
+                                        <a href="product/<%= product.id %>" type="button" class="btn btn-primary btn-sm">View</a>
+                                        <a href="/order" type="button" class="btn btn-danger btn-sm">
+                                          <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                                          To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <% }); %>
+                    </div>
+                </div>
             </div>
-          <% }); %>
         </div>
-      </div>
     </div>
-  </div>
 </main>
-<!-- =================== Main Section ends ===================-->
 
 <%- include('partials/footer') %>
