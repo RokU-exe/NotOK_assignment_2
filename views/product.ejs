@@ -1,0 +1,67 @@
+<%- include ('partials/head') %>
+<%- include ('partials/nav') %>
+
+<!--==========Product Section==========-->
+<main >
+  <div class="py-5 bg-body-tertiary" id="products-detail">
+    <div class="container bg-white shadow-lg">
+      <div class="row row-cols-3">
+        <!-- Left side bar -->
+        <div class="col-3 pt-3 min-vh-100">
+          <img src="/images/product/<%= product.image %>" class="d-block img-fluid shadow-sm" alt="Bootstrap Themes" width="700" loading="lazy">
+          <div class="row row-cols-3 d-flex">
+            <img class="sub-img " src="/images/product/sub-product/<%= product.subImage[0] %>" alt="<%= product.name %>">
+            <img class="sub-img" src="/images/product/sub-product/<%= product.subImage[1] %>" alt="<%= product.name %>"">
+            <img class="sub-img" src="/images/product/sub-product/<%= product.subImage[2] %>" alt="<%= product.name %>"">
+          </div>
+        </div>
+
+        <div class="col-6 pt-3">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><%= product.name %></h1>
+          <h3 class="text-danger"><%= product.price %> AUD</h3>
+          <p><%= product.description %></p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/order" type="button" class="btn btn-danger">
+              <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+               Add To Cart
+            </a>
+          </div>
+        </div>
+
+        <div class="col-3 bg-body-tertiary shadow-sm min-vh-100">
+          <div class="card-body pt-3">
+            <h6>Delivery Options</h6>
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-location-dot fa-2x pb-3" style="color: #000083;"></i>
+              <p class="px-3">Hồ Chí Minh, Quận 1, Phường Phạm Ngũ Lão</p>
+              <a class="pb-3 text-decoration-none" href="#">Change</a>
+            </div>
+          </div>
+
+          <div class="card-body pt-3">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-truck fa-2x pb-3" style="color: #000083;"></i>
+              <p class="px-3">
+                Standard Delivery <br>
+                Get by 12-13 May
+              </p>
+            </div>
+          </div>
+
+          <div class="card-body pt-3">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-money-simple-from-bracket" style="color: #000083;"></i>
+              <p class="px-3">
+                Cash on Delivery Available (No mutual check)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- =================== Main Section ends ===================-->
+<!--==========Product Section==========-->
+
+<%- include('partials/footer') %>
