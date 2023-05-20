@@ -74,6 +74,7 @@ if(valid)
 }
 
 //Create vendor account
+var count = 2;
 function validate ()
 {
    var user = document.login.username.value;
@@ -93,7 +94,7 @@ if (password == passwordArray [i])
 if(valid)
 {
    alert("Login was successful");
-   window.location = "add_new_product"
+   window.location = "vendor"
    return false ;
 }
 var again = "tries";
@@ -106,8 +107,9 @@ if(count >= 1)
    alert("Wrong password or username")
    count--;
 }
-// Create shipper account
 }
+// Create shipper account
+var count = 2;
 function validate ()
 {
    var user = document.login.username.value;
