@@ -57,7 +57,7 @@ if (password == passwordArray [i])
 if(valid)
 {
    alert("Login was successful");
-   window.location = "wwww.google.ie"
+   window.location = "/home"
    return false ;
 }
 var again = "tries";
