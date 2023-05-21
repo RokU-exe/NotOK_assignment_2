@@ -140,7 +140,7 @@ Customer.insertMany(customers)
 //Create sample shipper
 const shippers = [
     {
-        username: 'hantran',
+        username: 'locle',
         password: '12345',
         profilePicture: 's-1.jpg',
         distributionHub: 'Ho Chi Minh'
