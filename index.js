@@ -203,7 +203,7 @@ app.get('/product/:id/delete', (req, res) => {
     .catch((error) => res.send(error));
 });
 
-// DELETE products
+// Add products
 app.get('/product/add', (req, res) => {
     let name = req.body.name;
     console.log(name)
