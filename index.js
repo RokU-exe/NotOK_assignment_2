@@ -36,10 +36,6 @@ app.get('/', (req, res) => {
 app.get('/login/customer', (req, res) => {
     res.render('customer-login');
 });
-//render shipper login page
-app.get('/login/shipper', (req, res) => {
-    res.render('shipper-login');
-});
 //authentication and navigate to customer-home page 
 app.post('/customer/all-products', async (req, res) => {
     let username = req.body.cusUsername;
@@ -205,15 +201,52 @@ app.get('/privacy', (req, res) => {
 });
 
 /*========================= Shipper =========================*/
-//render shipper page
-app.get('/shipper', (req, res) => {
+//render vendor login page
+app.get('/login/shipper', (req, res) => {
+    res.render('shipper-login');
+});
+
+//authentication and navigate to shipper information
+app.post('shipper', async (req, res) => {
+    let username = req.body.venUsername;
+    let password = req.body.venPassword;
+    console.log(username);
+
+    let products = await Product.find();
+
+    await Vendor.findOne({username:username})  
+    .then((vendor) => {
+        if(vendor){
+            if(password != vendor.password){
+                console.log("Wrong username or password");
+                res.render('shipper-login');
+            }
+            else{
+                console.log("Shipper login sucess");
+                Product.find({vendorName:vendor.name})
+                .then((products) => {
+                    res.render('shipper', {products:products});
+                })
+                .catch((error) => res.send(error));
+            }
+
+        }
+        else{
+            console.log("No user found!");
+            res.render('shipper-login');
+        }
+      })
+    .catch((error) => res.send(error));
+});
+
+//render register page
+app.get('/register', (req, res) => {
     Product.find()
     .then((products) => {
-        res.render('shipper', {products: products});
+        res.render('register', {products: products});
     })
     .catch((error) => console.log(error.message));
 });
-
 
 app.listen(3000, () => {
     console.log('Server is up on port 3000');
