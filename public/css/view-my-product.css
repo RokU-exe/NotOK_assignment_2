@@ -125,14 +125,10 @@ table tr:nth-child(2n+1) {
 	border: none;
 	cursor: pointer;
 	width: 100%;
-}
-
-.btn-add a{
     color:white;
     text-decoration: none;
     text-transform: uppercase;
 }
-
 /* Breadcrumbs */
 
 .breadcrumbs {
