@@ -24,18 +24,18 @@ Acknowledgement:
 
     <div class="form">
       <h1>ADD NEW PRODUCT</h1>
-      <form action="/product" method="post">
+      <form action="/product/add" method="POST">
         <label for="image">Product's image</label><br>
-        <input type="file" id="productimage" name="productimage" required><br><br>
+        <input type="file" id="productimage" name="productimage"><br><br>
         <br>
         <label for="name">Product's name:</label><br>
         <input type="text" id="name" name="name" required>
         <br><br>
         <label for="price">Price:</label><br>
-        <input type="number" min="0" required>
+        <input type="number" min="0" name="price" required>
         <br><br>
         <label for="freeform">Description:</label> <br>
-        <textarea id="freeform" name="freeform" rows="4" cols="50"></textarea>
+        <textarea id="freeform" name="description" rows="4" cols="50" ></textarea>
         <br><br>
           <button class="btn btn-danger" type="submit" value="Create">Create</button>
           <button class="btn btn-danger" type="reset" value="Reset">Reset</button>

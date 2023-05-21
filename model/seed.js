@@ -137,3 +137,19 @@ Customer.insertMany(customers)
 .then(() => console.log('Many customers are saved'))
 .catch((error) => console.log(error.message));
 
+//Create sample shipper
+const shippers = [
+    {
+        username: 'hantran',
+        password: '12345',
+        profilePicture: 's-1.jpg',
+        distributionHub: 'Ho Chi Minh'
+    },
+]
+
+let Shipper = require('./Shipper');
+
+// Insert many documents
+Shipper.insertMany(shippers)
+.then(() => console.log('Many shippers are saved'))
+.catch((error) => console.log(error.message));

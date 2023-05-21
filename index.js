@@ -176,6 +176,8 @@ app.get('/vendor/add-new-product', (req, res) => {
     res.render('add-new-product');
 });
 
+
+
 /*=========================  Product =========================*/
 //get product based on their ID to view product detail pages
 app.get('/product/:id', (req, res) => {
@@ -188,8 +190,35 @@ app.get('/product/:id', (req, res) => {
     })
     .catch((error) => res.send(error));
 });
+  
+// DELETE products
+app.get('/product/:id/delete', (req, res) => {
+    Product.findByIdAndDelete(req.params.id)
+    .then((product) => {
+      if (!product) {
+        return res.send("Cannot found that product ID!");
+      }
+      res.redirect("/vendor/view-my-product");
+    })
+    .catch((error) => res.send(error));
+});
 
+// DELETE products
+app.get('/product/add', (req, res) => {
+    let name = req.body.name;
+    console.log(name)
+    let price = req.body.price;
+    let description = req.body.description;
 
+    let newProduct = {name: name, price: price, description: description}
+
+    Product.insertOne(newProduct, function(err, res) {
+        if (err) throw err;
+        console.log("1 product inserted");
+        res.redirect("/vendor/view-my-product");
+    })
+    .catch((error) => res.send(error));
+});
 
 /*========================= Privacy =========================*/
 //render privacy page
