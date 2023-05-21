@@ -1,0 +1,58 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: NotOk Group
+- Tran Nguyen Ngoc Han (s3963227)
+- Truong Loc Thien (s3924695)
+- Le Xuan Loc (s3955317)
+- Do Xuan Gia Bao (s3932184)
+Acknowledgement: 
+- https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
+-->
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/view-my-product.css">
+</head>
+<body>
+   <nav class="breadcrumbs">
+      <a href="/" class="breadcrumbs__item">Home</a>
+      <a href="#checkout" class="breadcrumbs__item is-active">View My Product</a> 
+    </nav>
+
+    <div class="table-users">
+        <div class="header">Product</div>
+        
+        <table cellspacing="0">
+           <tr>
+              <th>Picture</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th width="230">Description</th>
+              <th></th>
+             
+           </tr>
+
+           <% products.forEach(function(product) { %>
+            <tr>
+              <td></td> 
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= product.description %></td>
+              <td> 
+               <a href="/product/<%= product.id %>/delete">Delete</a> 
+               </td>
+            </tr>
+          <% }); %>
+        </table>
+
+        <button class="btn-add">
+         <a href="./add-new-product">Add New Product</a>
+        </button>
+        
+     </div>
+</body>
+
+<%- include('partials/footer') %>
