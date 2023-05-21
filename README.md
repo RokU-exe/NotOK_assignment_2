@@ -8,9 +8,14 @@ Demonstration Video URL:
 Customer account (username-password): 
     1. hantran - 12345  
 Vendor account (username-password): 
-    1. uniqlo - uniqlo1
-    2. gearvn-gearvn1
-    3. dyson - dyson1
+    <ul>
+        <ol>uniqlo - uniqlo1</ol>
+        <ol>gearvn-gearvn1</ol>
+        <ol>dyson - dyson1</ol>
+    </ul>
+    1. 
+    2. 
+    3. 
 Shipper (username-password): 
     1. locle - 12345
 
