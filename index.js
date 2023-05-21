@@ -25,93 +25,46 @@ const Product = require('./model/Product');
 const Vendor = require('./model/Vendor');
 const Customer = require('./model/Customer');
 
-//render home page
-app.get('/', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('home', {products: products});
-    })
-    .catch((error) => console.log(error.message));
-});
-
-//render login page
-app.get('/login', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('login', {products: products});
-    })
-    .catch((error) => console.log(error.message));
-});
-
-//render register page
-app.get('/register', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('register', {products: products});
-    })
-    .catch((error) => console.log(error.message));
-});
-
-//render customer home page and get all products
-app.get('/customer-home', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('customer-home', {products: products});
-    })
-    .catch((error) => console.log(error.message));
-});
-//render privacy page
-app.get('/privacy', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('privacy', {products: products});
-    })
-    .catch((error) => console.log(error.message));
-});
-//render shipper page
-app.get('/shipper', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('shipper', {products: products});
-    })
-    .catch((error) => console.log(error.message));
-});
-//render vendor page
-app.get('/vendor', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('vendor', {products: products});
-    })
-    .catch((error) => console.log(error.message));
-});
-//get product based on their ID to view product detail pages
-app.get('/product/:id', (req, res) => {
-    Product.findById(req.params.id)
-    .then((product) => {
-      if (!product) {
-        return res.send("Cannot found that ID!");
-      }
-      res.render('product', {product: product});
-    })
-    .catch((error) => res.send(error));
-});
-
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
-});
-
+/*========================= Home page =========================*/
 //render home page
 app.get('/', (req, res) => {
     res.render('home')
 });
 
-//render login page
-app.get('/login', (req, res) => {
-    Product.find()
-    .then((products) => {
-        res.render('login', {products: products});
-    })
-    .catch((error) => console.log(error.message));
+/*========================= Customer =========================*/
+//render customer login page
+app.get('/login/customer', (req, res) => {
+    res.render('customer-login');
+});
+
+//authentication and navigate to customer-home page 
+app.post('/customer/all-products', async (req, res) => {
+    let username = req.body.cusUsername;
+    let password = req.body.cusPassword;
+
+    let products = await Product.find();
+    let vendors = await Vendor.find();
+
+    await Customer.findOne({username:username})
+
+    .then((customer) => {
+        if(customer){
+            if(password != customer.password){
+                console.log("Wrong username or password")
+                res.render('customer-login');
+            }
+            else{
+                console.log("Customer login sucess");
+                let viewData = {products, vendors};
+                res.render('customer-home', viewData);
+            }
+        }
+        else{
+            console.log("No user found!");
+            res.render('customer-login');
+        }
+      })
+    .catch((error) => res.send(error));
 });
 
 //render register page
@@ -123,20 +76,9 @@ app.get('/register', (req, res) => {
     .catch((error) => console.log(error.message));
 });
 
-//render customer home page and get all products
-app.get('/all',  async (req, res) => {
-
-    let products = await Product.find();
-    let vendors = await Vendor.find();
-
-    let viewData = {products, vendors};
-    res.render('customer-home', viewData);
-});
-
-//Price filtering
+//Price filtering in customer-home
 app.get('/price-filter', async (req, res) => {
     const minPrice = req.query.min;
-    console.log(minPrice);
     const maxPrice = req.query.max;
     
     let vendors = await Vendor.find();
@@ -163,6 +105,78 @@ app.get('/filter', async (req, res) => {
       .catch((error) => res.send(error));
 });
 
+//render order page
+app.get('/order', (req, res) => {
+    Product.find()
+    .then((products) => {
+        res.render('order', {products: products});
+    })
+    .catch((error) => console.log(error.message));
+});
+
+//render checkout page
+app.post('/checkout', (req, res) => {
+    Product.find({ _id: { $in: req.body.products } })
+    .then((products) => {
+        res.render('order-summary', {customerName: `${req.body.firstName} ${req.body.lastName}`, products: products});
+    })
+    .catch((error) => {
+        console.log(error.message);
+    });
+});
+/*========================= Vendor =========================*/
+//render vendor login page
+app.get('/login/vendor', (req, res) => {
+    res.render('vendor-login');
+});
+
+//authentication and navigate to vendor view all products
+app.post('/vendor/view-products', async (req, res) => {
+    let username = req.body.venUsername;
+    let password = req.body.venPassword;
+    console.log(username);
+
+    let products = await Product.find();
+
+    await Vendor.findOne({username:username})  
+    .then((vendor) => {
+        if(vendor){
+            if(password != vendor.password){
+                console.log("Wrong username or password");
+                res.render('vendor-login');
+            }
+            else{
+                console.log("Vendor login sucess");
+                Product.find({vendorName:vendor.name})
+                .then((products) => {
+                    res.render('view-my-product', {products:products});
+                })
+                .catch((error) => res.send(error));
+            }
+
+        }
+        else{
+            console.log("No user found!");
+            res.render('vendor-login');
+        }
+      })
+    .catch((error) => res.send(error));
+});
+
+//render register page
+app.get('/register', (req, res) => {
+    Product.find()
+    .then((products) => {
+        res.render('register', {products: products});
+    })
+    .catch((error) => console.log(error.message));
+});
+
+app.get('/vendor/add-new-product', (req, res) => {
+    res.render('add-new-product');
+});
+
+/*=========================  Product =========================*/
 //get product based on their ID to view product detail pages
 app.get('/product/:id', (req, res) => {
     Product.findById(req.params.id)
@@ -175,22 +189,29 @@ app.get('/product/:id', (req, res) => {
     .catch((error) => res.send(error));
 });
 
-//render order page
-app.get('/order', (req, res) => {
+
+
+/*========================= Privacy =========================*/
+//render privacy page
+app.get('/privacy', (req, res) => {
     Product.find()
     .then((products) => {
-        res.render('order', {products: products});
+        res.render('privacy', {products: products});
     })
     .catch((error) => console.log(error.message));
 });
 
-app.post('/checkout', (req, res) => {
-    Product.find({ _id: { $in: req.body.products } })
+/*========================= Shipper =========================*/
+//render shipper page
+app.get('/shipper', (req, res) => {
+    Product.find()
     .then((products) => {
-        res.render('order-summary', {customerName: `${req.body.firstName} ${req.body.lastName}`, products: products});
+        res.render('shipper', {products: products});
     })
-    .catch((error) => {
-        console.log(error.message);
-    });
-    
+    .catch((error) => console.log(error.message));
 });
+
+
+app.listen(3000, () => {
+    console.log('Server is up on port 3000');
+  });

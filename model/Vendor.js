@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const vendorSchema = new mongoose.Schema({
     username: String,
     password: String,
-    profilePicture: Number,
+    profilePicture: String,
     name: String,
     address: String,
 });

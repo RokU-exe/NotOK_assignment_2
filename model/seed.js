@@ -90,13 +90,25 @@ Product.insertMany(products)
 //Create sample vendors collection and insert data
 const vendors = [
     {
-        name: "Uniqlo",
+        username: 'uniqlo',
+        password: 'uniqlo1',
+        profilePicture: 'v-1.png',
+        name: 'Uniqlo',
+        address: 'District 1',
     },
     {
-        name: "GearVN",
+        username: 'gearvn',
+        password: 'gearvn1',
+        profilePicture: 'v-2.png',
+        name: 'GearVN',
+        address: 'District 2',
     },
     {
-        name: "Dyson",
+        username: 'dyson',
+        password: 'dyson1',
+        profilePicture: 'v-3.png',
+        name: 'Dyson',
+        address: 'District 3',
     },
 ]
 
@@ -106,3 +118,22 @@ let Vendor = require('./Vendor');
 Vendor.insertMany(vendors)
 .then(() => console.log('Many vendors are saved'))
 .catch((error) => console.log(error.message));
+
+//Create sample customer collection and insert data
+const customers = [
+    {
+        username: 'hantran',
+        password: '12345',
+        profilePicture: 'c-1.jpg',
+        name: 'Han Tran',
+        address: '1234 Main St',
+    },
+]
+
+let Customer = require('./Customer');
+
+// Insert many documents
+Customer.insertMany(customers)
+.then(() => console.log('Many customers are saved'))
+.catch((error) => console.log(error.message));
+

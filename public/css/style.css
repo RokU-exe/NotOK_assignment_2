@@ -11,6 +11,52 @@ Acknowledgement:
 - https://github.com/TomHuynhSG/COSC2430-Web-Programming-materials.git
 */
 
+/* ---------- home & nav css ----------*/
+*{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.small-cover img{
+    width: 100%;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.navlist{
+    list-style-type: none;
+    background-color: #F5F5F5;
+}
+.navlist .list_item{
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #F5F5F5;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+    padding: 0 17px;
+}
+.navbar a{
+    color:darkblue;
+    background-color: white;
+}
+
+.navbar a:hover{
+    color: orangered;
+}
+.logo{
+    background-color: white;
+    width: 90%;
+}
 
 /* ---------- Design the button page ---------- */
 .btn-danger{
@@ -81,18 +127,6 @@ Acknowledgement:
 }
 
 /* ---------- Design the login page ---------- */
-.user-pass ul li {
-	list-style-type: none;
-	padding-bottom: 5%;
-}
-
-.user-pass ul li input {
-	background-color: white;
-	border: solid 1px black;
-	border-radius: 5px;
-	text-align: left;
-}
-
 h1{
 	font-family: sans-serif;
 	color: #ed6600;
@@ -104,7 +138,6 @@ h1{
     font-family: sans-serif;
     border: 2px solid #ed6600;
     width: 30%;
-    text-align: center;
     border-radius: 12px;
     background-color: white;
     padding-bottom: 10px;
@@ -137,8 +170,7 @@ h1{
 /* ---------- Design the register page ---------- */
 #register-form {
     margin: 30px auto;
-    padding: 12px;
-    width: 70%;
+    padding: 3rem;
     border: 2px solid #ed6600;
     border-radius: 25px;
 }
@@ -162,13 +194,8 @@ h1{
 	cursor: pointer;
 	width: 100%;
 }
-#register-form h1 {
-    text-align: center;
-}
-#register-form h4 {
-    text-align: center;
-}
 #register-form label {
+    text-align: left;
     padding-bottom: 1px;
 }
 #register-form input {
@@ -178,52 +205,7 @@ h1{
     -webkit-appearance: none; /* hide arrows from input number in form */
     margin: 0;
 }
-/*Code bừa*/
-*{
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-.small-cover img{
-    width: 100%;
-}
-.navbar{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-}
-.navlist{
-    list-style-type: none;
-    background-color: #F5F5F5;
-}
-.navlist .list_item{
-    position: relative;
-    display: inline-block;
-    font-size: 12px;
-    height: 25px;
-    line-height: 25px;
-    text-align: left;
-    white-space: nowrap;
-    cursor: pointer;
-    color: #F5F5F5;
-    -webkit-transition: color .2s;
-    transition: color .2s;
-    padding: 0 17px;
-}
-.navbar a{
-    color:darkblue;
-    background-color: white;
-}
 
-.navbar a:hover{
-    color: orangered;
-}
-.logo{
-    background-color: white;
-    width: 90%;
-}
 /* Add a black background color to the top navigation bar */
 .topnav {
     overflow:hidden;
