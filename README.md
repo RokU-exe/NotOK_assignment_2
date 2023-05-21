@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 Github Repo URL: https://github.com/RokU-exe/NotOK_assignment_2.git
 <br>
-Demonstration Video URL: 
+Demonstration Video URL: https://youtu.be/Gt8FocYFqDw
 
 --------------------------------------------------------------------------------
 Customer account (username-password): 
