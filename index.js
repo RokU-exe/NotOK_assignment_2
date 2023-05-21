@@ -36,7 +36,10 @@ app.get('/', (req, res) => {
 app.get('/login/customer', (req, res) => {
     res.render('customer-login');
 });
-
+//render shipper login page
+app.get('/login/shipper', (req, res) => {
+    res.render('shipper-login');
+});
 //authentication and navigate to customer-home page 
 app.post('/customer/all-products', async (req, res) => {
     let username = req.body.cusUsername;
