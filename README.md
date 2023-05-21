@@ -2,26 +2,30 @@
 
 --------------------------------------------------------------------------------
 Github Repo URL: https://github.com/RokU-exe/NotOK_assignment_2.git
+<br>
 Demonstration Video URL: 
 
 --------------------------------------------------------------------------------
 Customer account (username-password): 
-    1. hantran - 12345  
+    <ol>
+        <li>hantran - 12345  </li>
+    </ol>
 Vendor account (username-password): 
-    <ul>
-        <ol>uniqlo - uniqlo1</ol>
-        <ol>gearvn-gearvn1</ol>
-        <ol>dyson - dyson1</ol>
-    </ul>
-    1. 
-    2. 
-    3. 
+    <ol>
+        <li>uniqlo - uniqlo1</li>
+        <li>gearvn-gearvn1</li>
+        <li>dyson - dyson1</li>
+    </ol>
 Shipper (username-password): 
-    1. locle - 12345
+    <ol>
+        <li>locle - 12345</li>
+    </ol>
 
 --------------------------------------------------------------------------------
 How to start website:
-    1. Open terminal 
-    2. In the terminal, run "npm install ejs express mongoose nodemon"
-    3. In the terminal, run "npm run nodemon"
-    4. Open a web browser, type in: http://localhost:3000/
+    <ol>
+        <li>Open terminal</li>
+        <li>In the terminal, run "npm install ejs express mongoose nodemon"</li>
+        <li>In the terminal, run "npm run nodemon"</li>
+        <li>Open a web browser, type in: http://localhost:3000/</li>
+    </ol>
