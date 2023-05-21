@@ -38,7 +38,9 @@ Acknowledgement:
 
            <% products.forEach(function(product) { %>
             <tr>
-              <td></td> 
+              <td>
+               <img src="/images/product/<%= product.image %>" alt="<%= product.name %>">
+               </td> 
               <td><%= product.name %></td>
               <td><%= product.price %></td>
               <td><%= product.description %></td>
